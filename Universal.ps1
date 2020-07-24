@@ -31,5 +31,4 @@ param(
     (Get-Content "$Nuspec").Replace('[[VERSION]]',"$DashboardVersion") | Set-Content "$Nuspec"
 
     choco pack $Nuspec --output-directory="'$($env:Build_ArtifactStagingDirectory)'"
-
-    Get-ChildItem $env:Build_ArtifactStagingDirectory -filter *.nupkg
+    choco push $((Get-ChildItem $env:Build_ArtifactStagingDirectory -filter *.nupkg).FullName) -s https://push.chocolatey.org --api-key="'$($env:ChocolateyKey)'"
