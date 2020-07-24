@@ -8,6 +8,12 @@ param(
     $DashboardDownloadPath = "https://imsreleases.blob.core.windows.net/universal/production/$dashboardVersion/PowerShellUniversal.$dashboardVersion.msi"
     )
 
+    $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+
+    $Nuspec = Get-ChildItem $toolsDir -recurse -filter *.nuspec | Select -ExpandProperty FullName
+    $Install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyInstall.ps1' | Select -ExpandProperty FullName
+
+
     $tempPath = Join-Path -Path $env:TEMP -ChildPath ([GUID]::NewGuid()).GUID
     $null = New-Item $tempPath -ItemType Directory
 
@@ -20,7 +26,10 @@ param(
 
     Remove-Item $tempPath -Recurse -Force
 
-    (Get-Content 'C:\tmp\Universal\PowerShellUniversal\tools\chocolateyinstall.ps1').Replace('[[URL]]',"$DashboardDownloadPath") | Set-Content 'C:\tmp\Universal\PowerShellUniversal\tools\chocolateyinstall.ps1'
-    (Get-Content 'C:\tmp\Universal\PowerShellUniversal\tools\chocolateyinstall.ps1').Replace('[[CHECKSUM]]',"$checksum") | Set-Content 'C:\tmp\Universal\PowerShellUniversal\tools\chocolateyinstall.ps1'
-    (Get-Content 'C:\tmp\Universal\PowerShellUniversal\powershelluniversal.nuspec').Replace('[[VERSION]]',"$DashboardVersion") | Set-Content 'C:\tmp\Universal\PowerShellUniversal\powershelluniversal.nuspec'
+    (Get-Content "$Install").Replace('[[URL]]',"$DashboardDownloadPath") | Set-Content "$Install"
+    (Get-Content "$Install").Replace('[[CHECKSUM]]',"$checksum") | Set-Content "$Install"
+    (Get-Content "$Nuspec").Replace('[[VERSION]]',"$DashboardVersion") | Set-Content "$Nuspec"
 
+    choco pack $Nuspec --output-directory="'$($env:Build_ArtifactStagingDirectory)'"
+
+    Get-ChildItem $env:Build_ArtifactStagingDirectory -filter *.nupkg
