@@ -3,9 +3,9 @@
   <metadata>
     <id>powershelluniversal</id>
     <version>[[VERSION]]</version>
-    <packageSourceUrl>https://github.com/steviecoaster/choco-packages/powershelluniversal</packageSourceUrl>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/PowerShellUniversal</packageSourceUrl>
     <owners>steviecoaster</owners>
-    <title>PowerShellUniversal (Install)</title>
+    <title>PowerShell Universal (Install)</title>
     <authors>Ironman Software</authors>
     <projectUrl>https://ironmansoftware.com/powershell-universal/</projectUrl>
     <iconUrl>https://github.com/ironmansoftware/universal-dashboard/blob/master/images/logo.png</iconUrl>
