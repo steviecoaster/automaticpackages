@@ -11,7 +11,7 @@ param(
 $currentVersion = choco list powershelluniversal --exact -r | ConvertFrom-CSV -Delimiter '|' -Header 'Name', 'Version'
 
 if($null -eq $currentVersion) {
-    $currentVersion.Version = '0.0.0'
+    $currentVersion = [pscustomobject]@{'Version' = '0.0.0'}
 }
 if ([version]$($currentVersion.Version) -lt $DashboardVersion) {
    
