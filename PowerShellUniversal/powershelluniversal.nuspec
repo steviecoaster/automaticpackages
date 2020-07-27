@@ -12,9 +12,12 @@
     <copyright>2020 PowerShell Universal Ironman Software</copyright>
     <licenseUrl>https://github.com/ironmansoftware/universal-dashboard/blob/master/LICENSE</licenseUrl>
     <docsUrl>https://docs.ironmansoftware.com/</docsUrl>
-    <tags>powershelluniversal universal automation ironmansoftware ironman dashboard</tags>
+    <tags>powershelluniversal universal automation ironmansoftware ironman dashboard notSilent</tags>
     <summary>PowerShell Universal is an automation platform for scheduling and running PowerShell scripts</summary>
-    <description>Universal is a cross-platform solution for developing web-based tools with PowerShell. It currently provides three main features which include APIs, Automation and Dashboards. 
+    <description>**The current version of this package launches a web browser after installation. This will be suppressable in a later version**
+    
+    Universal is a cross-platform solution for developing web-based tools with PowerShell. It currently provides three main features which include APIs, Automation and Dashboards. 
+
 Universal provides an Administrator console, management REST API, PowerShell cmdlets and a idempotent configuration system using PowerShell scripts.  
 
 # APIs
