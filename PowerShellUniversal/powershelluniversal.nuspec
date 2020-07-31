@@ -14,7 +14,10 @@
     <docsUrl>https://docs.ironmansoftware.com/</docsUrl>
     <tags>powershelluniversal universal automation ironmansoftware ironman dashboard notSilent</tags>
     <summary>PowerShell Universal is an automation platform for scheduling and running PowerShell scripts</summary>
-    <description>**The current version of this package launches a web browser after installation. This will be suppressable in a later version**
+    <description>
+    # Package Parameters
+
+    - `/OpenBrowserOnInstall` : Opens the Universal WebUI upon installation
     
     Universal is a cross-platform solution for developing web-based tools with PowerShell. It currently provides three main features which include APIs, Automation and Dashboards. 
 
