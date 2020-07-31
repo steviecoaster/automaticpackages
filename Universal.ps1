@@ -6,7 +6,11 @@ param(
 
     [Parameter()]
     [String]
-    $DashboardDownloadPath = "https://imsreleases.blob.core.windows.net/universal/production/$dashboardVersion/PowerShellUniversal.$dashboardVersion.msi"
+    $DashboardDownloadPath = "https://imsreleases.blob.core.windows.net/universal/production/$dashboardVersion/PowerShellUniversal.$dashboardVersion.msi",
+
+    [Parameter()]
+    [string]
+    $Checksum = $([string](Invoke-WebRequest"https://imsreleases.blob.core.windows.net/universal/production/$dashboardVersion/PowerShellUniversal.$dashboardVersion.msi.sha256"))
 )
 
 $currentVersion = choco list powershelluniversal --exact -r | ConvertFrom-CSV -Delimiter '|' -Header 'Name', 'Version'
@@ -20,10 +24,9 @@ if ([version]$($currentVersion.Version) -lt $DashboardVersion) {
 
     $Nuspec = Get-ChildItem $toolsDir -recurse -filter *.nuspec | Select-Object -ExpandProperty FullName
     $Install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyInstall.ps1' | Select-Object -ExpandProperty FullName
-    $checksum = $([string](Invoke-WebRequest -UseBasicParsing "https://imsreleases.blob.core.windows.net/universal/production/$dashboardVersion/PowershellUniversal.$dashboardVersion.msi.sha256"))
 
     (Get-Content "$Install").Replace('[[URL]]', "$DashboardDownloadPath") | Set-Content "$Install"
-    (Get-Content "$Install").Replace('[[CHECKSUM]]', "$checksum") | Set-Content "$Install"
+    (Get-Content "$Install").Replace('[[CHECKSUM]]', "$Checksum") | Set-Content "$Install"
     (Get-Content "$Nuspec").Replace('[[VERSION]]', "$DashboardVersion") | Set-Content "$Nuspec"
 
     choco pack $Nuspec --output-directory="'$($env:Build_ArtifactStagingDirectory)'"
