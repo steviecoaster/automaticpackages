@@ -26,7 +26,7 @@ if ([version]$($currentVersion.Version) -lt $DashboardVersion) {
     $Install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyInstall.ps1' | Select-Object -ExpandProperty FullName
 
     (Get-Content "$Install").Replace('[[URL]]', "$DashboardDownloadPath") | Set-Content "$Install"
-    (Get-Content "$Install").Replace('[[CHECKSUM]]', "$Checksum") | Set-Content "$Install"
+    (Get-Content "$Install").Replace('[[CHECKSUM]]', "$($Checksum.Trim())") | Set-Content "$Install"
     (Get-Content "$Nuspec").Replace('[[VERSION]]', "$DashboardVersion") | Set-Content "$Nuspec"
 
     choco pack $Nuspec --output-directory="'$($env:Build_ArtifactStagingDirectory)'"
