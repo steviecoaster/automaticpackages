@@ -10,7 +10,7 @@ param(
 
     [Parameter()]
     [string]
-    $Checksum = $([string](Invoke-WebRequest"https://imsreleases.blob.core.windows.net/universal/production/$dashboardVersion/PowerShellUniversal.$dashboardVersion.msi.sha256"))
+    $Checksum = $([string](Invoke-WebRequest -UseBasicParsing "https://imsreleases.blob.core.windows.net/universal/production/$dashboardVersion/PowerShellUniversal.$dashboardVersion.msi.sha256"))
 )
 
 $currentVersion = choco list powershelluniversal --exact -r | ConvertFrom-CSV -Delimiter '|' -Header 'Name', 'Version'
