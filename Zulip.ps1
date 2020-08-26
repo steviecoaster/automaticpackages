@@ -20,7 +20,7 @@ if ([version]$($currentVersion.Version) -lt $Version) {
     $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
     $Nuspec = Get-ChildItem $toolsDir -recurse -filter zulip.nuspec | Select-Object -ExpandProperty FullName
-    $Install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyInstall.ps1' | Where-Object { $_.FullName -contains 'zulip' } | Select-Object -ExpandProperty FullName 
+    $Install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyInstall.ps1' | Where-Object { $_.Directory -match 'zulip' } | Select-Object -ExpandProperty FullName 
     
     Write-Host "Install Script: $Install"
 
@@ -30,7 +30,7 @@ if ([version]$($currentVersion.Version) -lt $Version) {
     
     Write-Host "Generating checksum for binary"
     Invoke-WebRequest -Uri $latestrelease.browser_download_url -OutFile "$tempPath\$binary"
-    $checksum = ((Get-FileHash $TempDir\$binary).Hash).trim()
+    $checksum = ((Get-FileHash $TempPath\$binary).Hash).trim()
 
     Write-Host "Generated checksum: $checksum"
 
