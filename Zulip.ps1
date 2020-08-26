@@ -11,7 +11,7 @@ $currentVersion = choco list zulip --exact -r -s https://chocolatey.org/api/v2| 
 if($null -eq $currentVersion) {
     $currentVersion = [pscustomobject]@{'Version' = '0.0.0'}
 }
-if ([version]$($currentVersion.Version) -lt $DashboardVersion) {
+if ([version]$($currentVersion.Version) -lt $Version) {
    
     $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
@@ -29,5 +29,7 @@ if ([version]$($currentVersion.Version) -lt $DashboardVersion) {
     (Get-Content "$Install").Replace('[[CHECKSUM]]',"$checksum")
 
     choco pack $Nuspec --output-directory="'$($env:Build_ArtifactStagingDirectory)'"
-    choco push $((Get-ChildItem $env:Build_ArtifactStagingDirectory -filter zulip.*.nupkg).FullName) -s https://push.chocolatey.org --api-key="'$env:ChocolateyKey'"
+
+    Get-ChildItem $env:Build_ArtifactStagingDirectory -filter *.nupkg
+    #choco push $((Get-ChildItem $env:Build_ArtifactStagingDirectory -filter zulip.*.nupkg).FullName) -s https://push.chocolatey.org --api-key="'$env:ChocolateyKey'"
 }
