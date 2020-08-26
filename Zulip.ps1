@@ -29,7 +29,9 @@ if ([version]$($currentVersion.Version) -lt $Version) {
     $null = New-item $tempPath -ItemType Directory
     
     Write-Host "Generating checksum for binary"
-    Invoke-WebRequest -Uri $latestrelease.browser_download_url -OutFile "$tempPath\$binary"
+    $downloader = New-Object System.Net.WebClient
+    $downloader.DownloadFile($($latestrelease.browser_download_url),"$tempPath\$binary")
+    #Invoke-WebRequest -Uri $latestrelease.browser_download_url -OutFile "$tempPath\$binary"
     $checksum = ((Get-FileHash $TempPath\$binary).Hash).trim()
 
     Write-Host "Generated checksum: $checksum"
