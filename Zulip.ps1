@@ -38,8 +38,11 @@ if ([version]$($currentVersion.Version) -lt $Version) {
 
     Write-Host "Replacing content in files"
     (Get-Content "$Nuspec").Replace('[[VERSION]]', "$Version") | Set-Content "$Nuspec"
-    (Get-Content "$Install").Replace('[[URL]]',"$($latestrelease.browser_download_url)")
-    (Get-Content "$Install").Replace('[[CHECKSUM]]',"$checksum")
+    (Get-Content "$Install").Replace('[[URL]]',"$($latestrelease.browser_download_url)") | Set-Content "$Install"
+    (Get-Content "$Install").Replace('[[CHECKSUM]]',"$checksum") | Set-Content "$Install"
+
+    Write-Host "Verify install script contents"
+    Get-Content $Install
 
     Write-Host "Packing the package"
     choco pack $Nuspec --output-directory="'$($env:Build_ArtifactStagingDirectory)'"
