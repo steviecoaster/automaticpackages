@@ -23,7 +23,7 @@ if ([version]$($currentVersion.Version) -lt $DashboardVersion) {
     $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
     $Nuspec = Get-ChildItem $toolsDir -recurse -filter powershelluniversal.nuspec | Select-Object -ExpandProperty FullName
-    $Install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyInstall.ps1' | Select-Object -ExpandProperty FullName
+    $Install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyInstall.ps1' | Where-Object { $_.Directory -notmatch 'powershelluniversal.licensed|zulip' } | Select-Object -ExpandProperty FullName
 
     (Get-Content "$Install").Replace('[[URL]]', "$DashboardDownloadPath") | Set-Content "$Install"
     (Get-Content "$Install").Replace('[[CHECKSUM]]', "$($Checksum.Trim())") | Set-Content "$Install"
