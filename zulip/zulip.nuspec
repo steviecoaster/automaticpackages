@@ -4,9 +4,9 @@
     <id>zulip</id>
     <version>[[VERSION]]</version>
     <title>zulip (Install)</title>
-    <authors>__REPLACE_AUTHORS_OF_SOFTWARE_COMMA_SEPARATED__</authors>
+    <authors>steviecoaster</authors>
     <!-- projectUrl is required for the community feed -->
-    <projectUrl>https://_Software_Location_REMOVE_OR_FILL_OUT_</projectUrl>
+    <projectUrl>https://github.com/steviecoaster/automaticpackages/tree/master/zulip</projectUrl>
     <iconUrl>https://github.com/zulip/zulip-desktop/blob/master/app/resources/zulip.png</iconUrl>
     <copyright>2019 Kandra Labs, Inc.</copyright>
     <licenseUrl>https://github.com/zulip/zulip-desktop/blob/master/LICENSE</licenseUrl>
