@@ -5,7 +5,7 @@
     <version>[[VERSION]]</version>
     <title>zulip (Install)</title>
     <authors>steviecoaster</authors>
-    <projectUrl>https://github.com/zulip/zulip-desktop</projectUrl
+    <projectUrl>https://github.com/zulip/zulip-desktop</projectUrl>
     <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/zulip</packageSourceUrl>
     <iconUrl>https://github.com/zulip/zulip-desktop/blob/master/app/resources/zulip.png</iconUrl>
     <copyright>2019 Kandra Labs, Inc.</copyright>
