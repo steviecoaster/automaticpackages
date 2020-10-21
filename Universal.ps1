@@ -29,6 +29,6 @@ if ([version]$($currentVersion.Version) -lt $DashboardVersion) {
     (Get-Content "$Install").Replace('[[CHECKSUM]]', "$($Checksum.Trim())") | Set-Content "$Install"
     (Get-Content "$Nuspec").Replace('[[VERSION]]', "$DashboardVersion") | Set-Content "$Nuspec"
 
-    choco pack $Nuspec --output-directory="'$($env:Build_ArtifactStagingDirectory)'"
-    choco push $((Get-ChildItem $env:Build_ArtifactStagingDirectory -filter powrshelluniversal.*.nupkg).FullName) -s https://push.chocolatey.org --api-key="'$env:ChocolateyKey'"
+    choco pack $Nuspec --output-directory="'$toolsDir'"
+    choco push $((Get-ChildItem $toolsDir -filter powrshelluniversal.*.nupkg).FullName) -s https://push.chocolatey.org --api-key="'$env:ChocolateyKey'"
 }
