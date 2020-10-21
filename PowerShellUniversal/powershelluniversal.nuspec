@@ -12,7 +12,7 @@
     <copyright>2020 PowerShell Universal Ironman Software</copyright>
     <licenseUrl>https://github.com/ironmansoftware/universal-dashboard/blob/master/LICENSE</licenseUrl>
     <docsUrl>https://docs.ironmansoftware.com/</docsUrl>
-    <tags>powershelluniversal universal automation ironmansoftware ironman dashboard notSilent</tags>
+    <tags>powershelluniversal universal automation ironmansoftware ironman dashboard</tags>
     <summary>PowerShell Universal is an automation platform for scheduling and running PowerShell scripts</summary>
     <description>
     # Package Parameters
@@ -53,7 +53,6 @@ Universal provides an Administrator console, management REST API, PowerShell cmd
     <releaseNotes>https://ironmansoftware.com/universal-changelog.md</releaseNotes>
   <dependencies>
       <dependency id="dotnet4.7.2" />
-      <dependency id="googlechrome" />
     </dependencies>
     
   </metadata>
