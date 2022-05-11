@@ -52,7 +52,7 @@ Universal provides an Administrator console, management REST API, PowerShell cmd
 - Support for Windows PowerShell as well as PowerShell</description>
     <releaseNotes>https://ironmansoftware.com/universal-changelog.md</releaseNotes>
   <dependencies>
-      <dependency id="dotnet4.7.2" />
+      <dependency id="netfx-4.7.2" />
     </dependencies>
     
   </metadata>
