@@ -1,7 +1,7 @@
 
 Write-Host "Fetching latest release information from Github"
 $latestrelease = (Invoke-RestMethod -Uri "https://api.github.com/repos/zulip/zulip-desktop/releases/latest").assets | 
-    Where-Object { $_.name -match 'msi'}
+    Where-Object { $_.name -match 'x64.msi'}
 
     $binary = $latestrelease.name
 $null = $latestrelease.name -match '(?<version>\d+(\.\d+)+)'
