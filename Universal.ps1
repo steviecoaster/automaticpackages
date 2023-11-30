@@ -30,5 +30,5 @@ if ([version]$($currentVersion.Version) -lt $DashboardVersion) {
     (Get-Content "$Nuspec").Replace('[[VERSION]]', "$DashboardVersion") | Set-Content "$Nuspec"
 
     choco pack $Nuspec --output-directory="'$toolsDir'"
-    choco push $((Get-ChildItem $toolsDir -filter powrshelluniversal.*.nupkg).FullName) -s https://push.chocolatey.org --api-key="'$env:CHOCO_API_KEY'"
+    choco push $((Get-ChildItem $toolsDir -filter powrshelluniversal.*.nupkg).FullName) -s https://push.chocolatey.org --api-key="'$env:ChocoPushSecret'"
 }
