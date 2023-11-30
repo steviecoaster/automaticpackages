@@ -1,0 +1,29 @@
+name: Build nexus-repository Package
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 7 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      UpstreamUrl: "https://push.chocolatey.org"
+      ChocoPushSecret: ${{ secrets.CHOCO_API_KEY }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Publish Latest powershelluniversal
+        run: .\Universal.ps1
+        shell: powershell
+
+      - name: Publish Latest zulip
+        run: .\Zulip.ps1
+        shell: powershell
+   
