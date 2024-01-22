@@ -49,5 +49,5 @@ if ([version]$($currentVersion.Version) -lt $Version) {
 
     Write-host "Validate nupkg is correct"
     Get-ChildItem $env:Build_ArtifactStagingDirectory -filter *.nupkg
-    choco push $((Get-ChildItem $env:Build_ArtifactStagingDirectory -filter zulip.*.nupkg).FullName) -s https://push.chocolatey.org --api-key="'$env:CHOCO_API_KEY'"
+    choco push $((Get-ChildItem $env:Build_ArtifactStagingDirectory -filter zulip.*.nupkg).FullName) -s $env:UpstreamUrl --api-key="'$env:ChocoPushSecret'"
 }
