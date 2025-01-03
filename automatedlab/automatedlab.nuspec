@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>automatedlab</id>
+    <version></version>    
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatedlab</packageSourceUrl>
+    <owners>steviecoaster</owners>
+    <title>automatedlab (Install)</title>
+    <authors>Jan-Hendrik Peters, Raimund Andrée</authors>
+    <projectUrl>https://github.com/AutomatedLab/AutomatedLab</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/steviecoaster/automaticpackages/master/icons/Automated-Lab_icon128.png</iconUrl>
+    <licenseUrl>https://github.com/AutomatedLab/AutomatedLab/blob/develop/LICENSE</licenseUrl>
+    <projectSourceUrl>https://github.com/AutomatedLab/AutomatedLab</projectSourceUrl>
+    <docsUrl>https://automatedlab.org</docsUrl>
+    <bugTrackerUrl>https://github.com/AutomatedLab/AutomatedLab/issues</bugTrackerUrl>
+    <tags>automatedlab SPACE_SEPARATED</tags>
+    <summary>Quickly test new technology in ephemeral labs using AutomatedLab</summary>
+    <description>AutomatedLab (AL) enables you to setup test and lab environments on Hyper-v or Azure with multiple products or just a single VM in a very short time. There are only two requirements you need to make sure: You need the DVD ISO images and a Hyper-V host or an Azure subscription.</description>
+    <releaseNotes>https://github.com/AutomatedLab/AutomatedLab/blob/develop/CHANGELOG.md</releaseNotes>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

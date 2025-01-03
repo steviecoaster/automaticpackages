@@ -1,29 +1,59 @@
-name: Build nexus-repository Package
+name: Choco Auto Update
 
 on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [main]
   schedule:
-    - cron: "0 7 * * *"
-
+    - cron:  '0 0 * * *'
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
-  build:
+  update_choco_auto:
+    name: update_${{ matrix.package }}
     runs-on: windows-latest
-    env:
-      UpstreamUrl: "https://push.chocolatey.org"
-      ChocoPushSecret: ${{ secrets.CHOCO_API_KEY }}
+
+    strategy:
+      max-parallel: 1
+      matrix:
+        package: [
+          automatedlab
+        ]
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with:
+          ref: master
 
-      - name: Publish Latest powershelluniversal
-        run: .\Universal.ps1
-        shell: powershell
+      - name: Install Chocolatey Automatic Package Updater Module
+        run: Install-Module -Name Chocolatey-AU -Force
 
-      - name: Publish Latest zulip
-        run: .\Zulip.ps1
-        shell: powershell
-   
+      - name: Run ${{ matrix.package }} update script
+        id: update
+        run: |
+          cd _auto\${{ matrix.package }}
+          $UpdateOutput = .\update.ps1
+          $NupkgPath = (($UpdateOutput.Result | Where-Object {$_ -like '*.nupkg''*'}) -split "'")[1]
+          Write-Output "NupkgPath=$($NupkgPath)" >> $Env:GITHUB_OUTPUT
+          $UpdateStatus = if ($UpdateOutput.Result -match 'No new version found') {'No Update'} else {'Update Available'}
+          Write-Output "UpdateStatus=$($UpdateStatus)" >> $Env:GITHUB_OUTPUT
+
+      - name: Test ${{ matrix.package }} install
+        run: Test-Package -Install -Nu ${{ steps.update.outputs.NupkgPath }}
+        if: steps.update.outputs.UpdateStatus == 'Update Available'
+
+      - name: Publish to Chocolatey community feed
+        run: |
+          $Nupkg = '${{ steps.update.outputs.NupkgPath }}'
+          $ApiKey = '${{ secrets.CHOCO_API_KEY }}'
+          $ChocoServer = 'https://push.chocolatey.org/'
+          choco push $Nupkg --source $ChocoServer --key $ApiKey
+        if: steps.update.outputs.UpdateStatus == 'Update Available'
+
+      - name: Commit Updated nuspec
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply Choco package update - ${{ matrix.package }} ${{ steps.update.outputs.newversion }}
+          file_pattern: '*.nuspec *.ps1'
+        if: steps.update.outputs.UpdateStatus == 'Update Available'
