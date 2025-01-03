@@ -1,4 +1,4 @@
-name: Build nexus-repository Package
+name: Build Packages
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       UpstreamUrl: "https://push.chocolatey.org"
       ChocoPushSecret: ${{ secrets.CHOCO_API_KEY }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Publish Latest powershelluniversal
         run: .\Universal.ps1
