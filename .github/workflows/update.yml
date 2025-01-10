@@ -18,8 +18,8 @@ jobs:
       max-parallel: 1
       matrix:
         package: [
-          automatedlab,
-          pgutil
+          pgutil,
+          automatedlab
         ]
 
     steps:
