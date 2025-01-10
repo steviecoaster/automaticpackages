@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pgutil</id>
+    <version></version>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/pgutil</packageSourceUrl>
+    <owners>steviecoaster</owners>
+    <title>pgutil (Install)</title>
+    <authors>Inedo</authors>
+    <projectUrl>https://github.com/Inedo/pgutil</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/steviecoaster/automaticpackages/master/icons/inedo-icon.png</iconUrl>
+    <licenseUrl>https://github.com/Inedo/pgutil/blob/thousand/LICENSE.txt</licenseUrl>
+    <projectSourceUrl>https://github.com/Inedo/pgutil</projectSourceUrl>
+    <docsUrl>https://docs.inedo.com/docs/proget/reference-api/proget-pgutil</docsUrl>
+    <bugTrackerUrl>https://forums.inedo.com</bugTrackerUrl>
+    <tags>pgutil inedo proget repository</tags>
+    <summary>pgutil is a command line tool for Inedo ProGet</summary>
+    <description>pgutil is an open-source (github.com), cross-platform command line tool that provides a variety of commands to upload/download packages, manage feeds, audit package compliance, assess vulnerabilities, etc.</description>
+    <releaseNotes>https://github.com/Inedo/pgutil/releases</releaseNotes>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
