@@ -7,8 +7,8 @@ $zipArgs = @{
   PackageName = $env:ChocolateyPackageName
   Url = $url
   UnzipLocation = $toolsDir
-  Checksum = ''
-  ChecksumType = 'SHA256'
+  checksum = 'e'
+  checksumType = 'SHA256'
 }
 
 Install-ChocolateyZipPackage @zipArgs
