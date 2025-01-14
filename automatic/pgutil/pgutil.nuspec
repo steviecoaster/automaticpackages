@@ -6,7 +6,7 @@
     <version></version>
     <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/pgutil</packageSourceUrl>
     <owners>steviecoaster</owners>
-    <title>pgutil (Install)</title>
+    <title>pgutil (Portable)</title>
     <authors>Inedo</authors>
     <projectUrl>https://github.com/Inedo/pgutil</projectUrl>
     <iconUrl>https://rawcdn.githack.com/steviecoaster/automaticpackages/master/icons/inedo-icon.png</iconUrl>
