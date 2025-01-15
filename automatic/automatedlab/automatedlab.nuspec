@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>automatedlab</id>
-    <version></version>    
+    <version>5.55.0</version>    
     <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatedlab</packageSourceUrl>
     <owners>steviecoaster</owners>
     <title>automatedlab (Install)</title>
