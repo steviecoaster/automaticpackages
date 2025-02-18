@@ -4,23 +4,22 @@
   <metadata>
     <id>automatedlab</id>
     <version>5.55.0</version>    
-    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatedlab</packageSourceUrl>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatic/automatedlab</packageSourceUrl>
     <owners>steviecoaster</owners>
     <title>automatedlab (Install)</title>
     <authors>Jan-Hendrik Peters, Raimund Andrée</authors>
     <projectUrl>https://github.com/AutomatedLab/AutomatedLab</projectUrl>
     <iconUrl>https://rawcdn.githack.com/steviecoaster/automaticpackages/master/icons/Automated-Lab_icon128.png</iconUrl>
     <licenseUrl>https://github.com/AutomatedLab/AutomatedLab/blob/develop/LICENSE</licenseUrl>
-    <projectSourceUrl>https://github.com/AutomatedLab/AutomatedLab</projectSourceUrl>
     <docsUrl>https://automatedlab.org</docsUrl>
     <bugTrackerUrl>https://github.com/AutomatedLab/AutomatedLab/issues</bugTrackerUrl>
-    <tags>automatedlab SPACE_SEPARATED</tags>
+    <tags>automatedlab development virtualization hyper-v azure</tags>
     <summary>Quickly test new technology in ephemeral labs using AutomatedLab</summary>
     <description>AutomatedLab (AL) enables you to setup test and lab environments on Hyper-v or Azure with multiple products or just a single VM in a very short time. There are only two requirements you need to make sure: You need the DVD ISO images and a Hyper-V host or an Azure subscription.</description>
     <releaseNotes>https://github.com/AutomatedLab/AutomatedLab/blob/develop/CHANGELOG.md</releaseNotes>
 
     <dependencies>
-          <dependency id="netfx-4.7.1" />
+          <dependency id="netfx-4.7.1" version="4.7.1.0"/>
           <dependency id="powershell" version="5.1.14409.20180811" />
     </dependencies>
   </metadata>
