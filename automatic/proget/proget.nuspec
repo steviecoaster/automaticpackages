@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>proget</id>
+    <version></version>
+    <title>proget (Install)</title>
+    <authors>Inedo</authors>
+    <owners>steviecoaster,imm0rtalsupp0rt</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://inedo.com/proget/license-agreement</licenseUrl>
+    <projectUrl>https://inedo.com/proget</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/imm0rtalsupp0rt/chocolateypackages@af320c5/proget/tools/proget-icon.svg</iconUrl>
+    <description>
+      ProGet is a Self-hosted, Cross-Platform Package and Container Repository that keeps all your packages and Docker containers in one place, allowing you to scan for vulnerabilities and control who can access different feeds.
+
+      ProGet supports just about all of the third-party package types you'll need (e.g. NuGet, npm, PowerShell, and Chocolatey) and comes in a powerful free version that you can upgrade when ready.
+
+      ## Package Parameters
+
+      - `/TargetDirectory` - The root install directory for ProGet. Defaults to `$PathCombine($SpecialWindowsPath(ProgramFiles), ProductName)`.
+      - `/ConnectionString` - Connection string used to create and initialize the database schema. Defaults to `'Data Source=Localhost\SQLEXPRESS;Trusted_Connection=true;'`
+      - `/DbName` - Name of the SQL database to use or create. This overrides any Initial Catalog specified in the connection string. Defaults to `ProGet`.
+      - `/WebServerPrefixes` - Specifies the URL and port used by the integrated web server. Defaults to `http://*:8624`.
+      - `/ExtensionsPath` - Specifies the directory where user-installed ProGet extensions will be stored. Defaults to `$PathCombine($SpecialWindowsPath(CommonApplicationData), ProductName, Extensions)`.
+      - `/ExtensionsTempPath` - Specifies the directory where extensions are unpacked and loaded from. Defaults to `$PathCombine($SpecialWindowsPath(CommonApplicationData), ProductName, ExtensionsTemp)`.
+      - `/LicenseKey` - If specified, this license key will be written to the database instance on installation. There is no default value.
+      - `/UserAccount` - The name of the user account which will be used to run ProGet's services. It may be LocalSystem, NetworkService, or any domain/local account. Defaults to `NetworkService`.
+      - `/UserPassword` - The password of the user account specified with the UserAccount parameter. Ignored if using LocalSystem or NetworkService. There is no default value.
+      - `/IsUpgrade` - When true, services will not be created. Defaults to `false`.
+    </description>
+    <summary>Keep all your packages and Docker containers in one place, scan for vulnerabilities, and control who can access different feeds. ProGet installs in minutes and has a powerful free version with a lot of great features that you can upgrade when ready.</summary>
+    <releaseNotes></releaseNotes>
+    <packageSourceUrl>https://github.com/imm0rtalsupp0rt/chocolateypackages/tree/main/proget</packageSourceUrl>
+    <docsUrl>https://docs.inedo.com/docs/proget/overview</docsUrl>
+    <bugTrackerUrl>https://forums.inedo.com/</bugTrackerUrl>
+    <tags>proget inedohub</tags>
+    <dependencies>
+      <dependency id="inedohub" version="1.4.4" />      
+      <dependency id="sql-server-express" version="2022.16.0.1000" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
