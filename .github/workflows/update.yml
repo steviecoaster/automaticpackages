@@ -19,6 +19,8 @@ jobs:
       matrix:
         package: [
           pgutil,
+          proget,
+          inedohub,
           automatedlab
         ]
 
