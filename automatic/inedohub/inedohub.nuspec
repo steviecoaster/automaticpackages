@@ -14,7 +14,7 @@
     <tags>inedohub</tags>
     <summary>The Inedo Hub is used to install ProGet, BuildMaster, and Otter on Windows.</summary>
     <releaseNotes></releaseNotes>
-    <packageSourceUrl>https://github.com/imm0rtalsupp0rt/chocolateypackages/tree/main/inedohub</packageSourceUrl>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatic/inedohub</packageSourceUrl>
     <docsUrl>https://docs.inedo.com/docs/installation/windows/desktophub-overview</docsUrl>
     <bugTrackerUrl>https://forums.inedo.com/</bugTrackerUrl>
     <description>The Inedo Hub is used to install ProGet, BuildMaster, and Otter on Windows. It's a lightweight installer that acts as the one-stop shop for downloading, installing, upgrading/downgrading, and maintaining your Inedo products.</description>

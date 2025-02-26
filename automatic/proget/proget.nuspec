@@ -30,7 +30,7 @@
     </description>
     <summary>Keep all your packages and Docker containers in one place, scan for vulnerabilities, and control who can access different feeds. ProGet installs in minutes and has a powerful free version with a lot of great features that you can upgrade when ready.</summary>
     <releaseNotes></releaseNotes>
-    <packageSourceUrl>https://github.com/imm0rtalsupp0rt/chocolateypackages/tree/main/proget</packageSourceUrl>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatic/proget</packageSourceUrl>
     <docsUrl>https://docs.inedo.com/docs/proget/overview</docsUrl>
     <bugTrackerUrl>https://forums.inedo.com/</bugTrackerUrl>
     <tags>proget inedohub</tags>
