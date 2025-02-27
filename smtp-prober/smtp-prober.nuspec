@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>smtp-prober</id>
+    <version>1.01.0</version>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatic/smtp-prober</packageSourceUrl>
+    <owners>steviecoaster</owners>
+    <title>SMTP Prober (Portable)</title>
+    <authors>Alex Nolan</authors>
+    <projectUrl>http://www.alexnolan.net/software/SMTPProber.htm</projectUrl>
+    <copyright>All Content Copyright 2004-2025 alexnolan.net. All Rights Reserved</copyright>
+    <tags>smtp-prober mail troubleshooting smtp</tags>
+    <summary>SMTP Prober is a utility for testing the setting for SMTP.</summary>
+    <description>
+Version: 1.01
+
+![Screenshot](https://github.com/steviecoaster/automaticpackages/tree/master/automatic/smtp-prober/screenshot.png?raw=true)
+
+SMTP Prober is a portable SMTP settings test tool. It can be used by software and website developers to test the correct settings for there SMTP server. It can also be used by IT engineers and system administrators when setting up SMTP servers.
+
+SMTP Prober is useful when developing websites in languages such as PHP which send confirmation or notification emails by SMTP settings on the host server. If your PHP code is returning error messages such as "5.7.1 Unable to relay for ..." you can use the test tool to check you have the right settings in your codes configuration.
+Different SMTP providers have different requirements for their settings. For example some providers require the From Address and the Reply To address to be the same.
+
+This is a portable tool that does not require installation to run.
+The settings can be saved if required. The settings are stored in an INI file called default.ini. This file is saved and read from the same folder as SMTPProber.exe is located. Note if you are running this utility from a CD ROM (or any other read only device) you will not be able to save the settings.
+    </description>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
