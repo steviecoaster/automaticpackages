@@ -4,7 +4,7 @@
   <metadata>
     <id>pgutil</id>
     <version>2.1.2.1</version>
-    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/pgutil</packageSourceUrl>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automagic/pgutil</packageSourceUrl>
     <owners>steviecoaster</owners>
     <title>pgutil (Portable)</title>
     <authors>Inedo</authors>
