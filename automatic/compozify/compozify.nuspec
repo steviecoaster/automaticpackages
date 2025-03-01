@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>compozify</id>
+    <version>0.2.1</version>
+    <owners>steviecoaster</owners>
+    <title>Compozify for Windows</title>
+    <authors>steviecoaster</authors>
+    <tags>compozify</tags>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatic/compozify</packageSourceUrl>
+    <projectUrl>https://github.com/profclems/compozify</projectUrl>
+    <licenseUrl>https://github.com/profclems/compozify/blob/main/LICENSE</licenseUrl>
+    <bugTrackerUrl>https://github.com/profclems/compozify/issues</bugTrackerUrl>
+    <docsUrl>https://github.com/profclems/compozify/tree/main/docs</docsUrl>
+    <summary>Compozify is a simple (yet complicated) tool to generate a docker-compose.yml file from a docker run command.</summary>
+    <description>Compozify is a simple (yet complicated) tool to generate a docker-compose.yml file from a docker run command.</description>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
