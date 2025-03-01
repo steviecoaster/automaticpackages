@@ -28,14 +28,24 @@ Describe 'Update File <_.Name>' -ForEach $script:packages {
   }
 
   It 'has function au_GetLatest' {
-    $functions = $script:ast.FindAll(
+    $script:ast.FindAll(
       {
         param($Ast)
         $Ast -is [System.Management.Automation.Language.FunctionDefinitionAst] -and
         $Ast.Name -eq 'global:au_GetLatest'
       },
       $false
-    )
-    $functions | Should -HaveCount 1
+    ) | Should -Not -BeNullOrEmpty
+  }
+
+  It 'calls the update function' {
+    $script:ast.FindAll(
+      {
+        param($Ast)
+        $Ast -is [System.Management.Automation.Language.CommandAst] -and
+        $Ast.CommandElements[0].Value -eq 'update'
+      },
+      $false
+    ) | Should -Not -BeNullOrEmpty
   }
 }
