@@ -21,7 +21,8 @@ jobs:
           pgutil,
           proget,
           inedohub,
-          automatedlab
+          automatedlab,
+          powershelluniversal
         ]
 
     steps:
