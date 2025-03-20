@@ -25,4 +25,6 @@ function global:au_GetLatest {
     }
 }
 
+function global:au_SearchReplace {}
+
 update -ChecksumFor none -NoCheckChocoVersion
