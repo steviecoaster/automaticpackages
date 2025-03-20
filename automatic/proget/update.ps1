@@ -62,4 +62,4 @@ function global:au_SearchReplace {
 }
 
 #Execution
-update -ChecksumFor none
+update -ChecksumFor none -NoCheckChocoVersion

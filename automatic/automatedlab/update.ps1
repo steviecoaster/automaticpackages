@@ -20,4 +20,4 @@ function global:au_SearchReplace {
     }
 }
 
-update -ChecksumFor 64
+update -ChecksumFor 64 -NoCheckChocoVersion
