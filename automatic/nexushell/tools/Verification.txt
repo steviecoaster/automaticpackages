@@ -1,0 +1,2 @@
+I am the author of the software contained within this package. For instructions on building the zip from source visit 
+https://github.com/steviecoaster/nexushell
