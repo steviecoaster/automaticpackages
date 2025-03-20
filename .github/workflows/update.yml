@@ -20,10 +20,10 @@ jobs:
         package: [
           nexushell,
           automatedlab,
+          powershelluniversal,
           pgutil,
           inedohub,
-          automatedlab,
-          powershelluniversal
+          proget
         ]
 
     steps:
