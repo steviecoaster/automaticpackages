@@ -17,7 +17,7 @@ function Get-InedoHubInstaller {
         #We capture the filename to use by inspecting the Content-Disposition Header
         $matcher = '(?<filename>(?<=filename=")[^"]+(?="))'
         $null = ($response.content.Headers.GetEnumerator() | Where-Object Key -eq 'Content-Disposition' | Select-Object -ExpandProperty Value) -match $matcher
-        $fileName = $matches.filename
+        $fileName = $matches.filename -replace 'InedoReleases/'
         #Save the installer to disk using the filename and the bytes from the download
         $filepath = Join-Path $pwd -ChildPath $fileName
         $file = [System.IO.FileStream]::new($filepath, [System.IO.FileMode]::Create)
