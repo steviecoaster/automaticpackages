@@ -18,12 +18,12 @@ jobs:
       max-parallel: 1
       matrix:
         package: [
-          nexushell,
           automatedlab,
           powershelluniversal,
           pgutil,
           inedohub,
-          proget
+          proget,
+          nexushell
         ]
 
     steps:
