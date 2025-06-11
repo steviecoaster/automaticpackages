@@ -1,13 +1,13 @@
 ﻿$ErrorActionPreference = 'Stop'
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
-$url = 'https://github.com/Inedo/pgutil/releases/download/v2.1.9.1/pgutil-win-x64.zip'
+$url = 'https://github.com/Inedo/pgutil/releases/download/v2.1.10.2/pgutil-win-x64.zip'
 
 $zipArgs = @{
   PackageName = $env:ChocolateyPackageName
   Url = $url
   UnzipLocation = $toolsDir
-  checksum = '5b2618b14fe738b976ab8261ae48481ec20cc9033390747772a1a7805c27e88c'
+  checksum = 'f603281176349234a52626b875a994d49ec738f9dbad9a60f0f81c54fae50322'
   checksumType = 'SHA256'
 }
 
