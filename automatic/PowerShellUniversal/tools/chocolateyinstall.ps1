@@ -11,8 +11,7 @@ $packageArgs = @{
   fileType      = 'MSI'
   url           = $url
   softwareName  = 'PowerShellUniversal*'
-  checksum      = '6B2458647496B7909D1848ACD95E99A8989052A19CA6B882E172683A9FA435E4
-)'
+  checksum      = '6B2458647496B7909D1848ACD95E99A8989052A19CA6B882E172683A9FA435E4'
   checksumType  = 'sha256'
   silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`" SUPPRESSBROWSER=true"
   validExitCodes= @(0, 3010, 1641)
