@@ -1,2 +1,4 @@
 .DS_Store
 **/*.nupkg
+# Ignore all .nuspec files
+*.nuspec
