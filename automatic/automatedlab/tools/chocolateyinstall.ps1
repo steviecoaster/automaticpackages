@@ -24,7 +24,7 @@ $packageArgs = @{
     fileType       = 'msi'
     file      = $file
     validExitCodes = @(0,3010,1641)
-    silentArgs     = "/qn /norestart /l*v '$($env:TEMP)\$($env:ChocolateyPackageName).$($env:chocolateyPackageVersion).MsiInstall.log'"
+    silentArgs     = "/qn /norestart"
 }
 
 Install-ChocolateyInstallPackage @packageArgs

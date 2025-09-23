@@ -11,12 +11,13 @@ function Get-ProGetInstallerMetaData {
     end {
         #Download the installer using an HttpClient so it's fast
         $client = [System.Net.Http.HttpClient]::new()
-        $response = $client.GetAsync($url).Result
+        $client.Timeout = [TimeSpan]::FromMinutes(10)
+        $response = $client.GetAsync($url).GetAwaiter().GetResult()
         #Get the file bytes so we can write it the file to disk
-        $contentBytes = $response.Content.ReadAsByteArrayAsync().Result
+        $contentBytes = $response.Content.ReadAsByteArrayAsync().GetAwaiter().GetResult()
 
         #We capture the filename to use by inspecting the Content-Disposition Header
-        $matcher = '(?<filename>(?<=filename=")[^"]+(?="))'
+        $matcher = '(?<filename>(?<=\/)[^"]+(?="))'
         $null = ($response.content.Headers.GetEnumerator() | Where-Object Key -eq 'Content-Disposition' | Select-Object -ExpandProperty Value) -match $matcher
         $fileName = $matches.filename
         #Save the installer to disk using the filename and the bytes from the download

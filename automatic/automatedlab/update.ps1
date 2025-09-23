@@ -1,5 +1,9 @@
 Import-Module Chocolatey-AU
 
+function global:au_BeforeUpdate() {
+    $Latest.Checksum64 = Get-RemoteChecksum $Latest.URL64
+}
+
 function global:au_GetLatest {
     $LatestRelease = Invoke-RestMethod -UseBasicParsing -Uri "https://api.github.com/repos/automatedlab/automatedlab/releases/latest"
 
@@ -20,4 +24,4 @@ function global:au_SearchReplace {
     }
 }
 
-update -ChecksumFor 64 -NoCheckChocoVersion
+update -ChecksumFor none -NoCheckChocoVersion
