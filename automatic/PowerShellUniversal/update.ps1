@@ -19,15 +19,15 @@ function global:au_GetLatest {
     @{
         Version  = $LatestVersion
         URL      = "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/PowerShellUniversal.$LatestVersion.msi"
-        Checksum = "$([string](Invoke-WebRequest -UseBasicParsing "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/PowerShellUniversal.$LatestVersion.msi.sha256")))".Trim()
+        Checksum = $([string](Invoke-WebRequest -UseBasicParsing "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/PowerShellUniversal.$LatestVersion.msi.sha256")).Trim()
     }
 }
 
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyinstall.ps1" = @{
-            "(?i)(^\s*(\$)url\s*=\s*)('.*')"      = "`$1'$($Latest.URL)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum)'"
+            "(?i)(^\s*(\$)url\s*=\s*)('.*')"  = "`$1'$($Latest.URL)'"
+            "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum)'"
         }
     }
 }
