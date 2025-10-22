@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = "Stop"
 $toolsdir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$url = 'https://proget.inedo.com/upack/Products/download/InedoReleases/DesktopHub/1.5.3?contentOnly=zip'
+$url = 'https://proget.inedo.com/upack/Products/download/InedoReleases/DesktopHub/1.5.4?contentOnly=zip'
 $pp = Get-PackageParameters
 
 # Create the unzip location
@@ -15,7 +15,7 @@ $zipArgs = @{
   PackageName   = $env:ChocolateyPackageName
   Url           = $url
   UnzipLocation = $unzipLocation
-  Checksum      = '15A7FACB90F83992AFC4615D04293AAE0310E3C5F1F32AC302A0E401F027521F'
+  Checksum      = '5FF6EB1C2B001B1766944F2534C57A69235DCD4530909EA5B9D443A05773F503'
   ChecksumType  = 'SHA256'
 }
 
