@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>inedohub</id>
-    <version>1.5.4</version>
+    <version>1.5.4.20251107</version>
     <title>inedohub (Install)</title>
     <authors>Inedo</authors>
     <owners>steviecoaster,imm0rtalsupp0rt</owners>
