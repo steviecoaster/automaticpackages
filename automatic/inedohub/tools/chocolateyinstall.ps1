@@ -15,7 +15,7 @@ $zipArgs = @{
   PackageName   = $env:ChocolateyPackageName
   Url           = $url
   UnzipLocation = $unzipLocation
-  Checksum      = '5FF6EB1C2B001B1766944F2534C57A69235DCD4530909EA5B9D443A05773F503'
+  Checksum      = '7F475277AC6F73C03BB37789FD028F77524CCD4CB261AD9520222F94103FC990'
   ChecksumType  = 'SHA256'
 }
 
