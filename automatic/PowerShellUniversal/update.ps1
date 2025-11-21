@@ -1,7 +1,7 @@
 Import-Module Chocolatey-AU
 
 function global:au_GetLatest {
-    $LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/v5-version.txt
+    $LatestVersion = (Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/v5-version.txt).Trim()
 
     @{
         Version  = $LatestVersion
