@@ -6,7 +6,7 @@ function global:au_GetLatest {
     @{
         Version  = $LatestVersion
         URL      = "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/PowerShellUniversal.$LatestVersion.msi"
-        Checksum = Invoke-RestMethod -UseBasicParsing "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/PowerShellUniversal.$LatestVersion.msi.sha256"
+        Checksum = (Invoke-RestMethod -UseBasicParsing "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/PowerShellUniversal.$LatestVersion.msi.sha256").Trim()
     }
 }
 
