@@ -10,7 +10,7 @@ else {
     throw "Inedo Hub not found, installation cannot continue"
 }
 
-$version = '25.0.16'
+$version = '25.0.17'
 #Set the location of hub.exe for command execution
 $fileLocation = (Get-Command hub.exe).source
 
