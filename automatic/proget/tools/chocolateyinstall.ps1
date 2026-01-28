@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop' # stop on all errors
 
 Import-Module $env:chocolateyInstall/helpers/ChocolateyProfile.psm1
-Update-SessionEnvironment #pickup new PATH items from dependency installs
+Update-SessionEnvironment # Pickup new PATH items from dependency installs
 
 if ((Get-Command hub.exe -CommandType Application)) {
     Write-Host "Inedo Hub found, we can continue"
@@ -18,10 +18,6 @@ $fileLocation = (Get-Command hub.exe).source
 $PackageParameters = Get-PackageParameters
 $installArgs = @("install", "ProGet:$($version)")
 
-if (-not $PackageParameters['ConnectionString']) {
-    $PackageParameters['ConnectionString'] = 'Data Source=Localhost\SQLEXPRESS;Trusted_Connection=true;'
-}
-
 if(-not $PackageParameters['WebServerPrefixes']){
     $WebServerPrefixes = '8624'
 }
@@ -30,7 +26,7 @@ switch ($PackageParameters.Keys) {
     "ConnectionString" {
         $installArgs += "--ConnectionString=`"$($PackageParameters['ConnectionString'])`""
     }
-    
+
     "TargetDirectory" {
         # The root install directory for the Inedo product.
         $installArgs += "--TargetDirectory=$($PackageParameters['TargetDirectory'])"
@@ -46,7 +42,7 @@ switch ($PackageParameters.Keys) {
     "WebServerPrefixes" {
         # Specifies the URL which is used by the integrated web server. Ignored if UseIntegratedWebServer is not true.
         $WebServerPrefixes = $PackageParameters["WebServerPrefixes"] 
-  
+
         $installArgs += "--WebServerPrefixes=$($WebServerPrefixes)"
         # default value: http://*:8624/
     }
@@ -62,7 +58,7 @@ switch ($PackageParameters.Keys) {
         $installArgs += "--ExtensionsTempPath=$($PackageParameters['ExtensionsTempPath'])"
         # default value: $PathCombine($SpecialWindowsPath(CommonApplicationData), ProductName, ExtensionsTemp)
     }
-    
+
     "LicenseKey" {
         # If specified, this license key will be written to the database instance on installation.
         $installArgs += "--LicenseKey=$($PackageParameters['LicenseKey'])"
@@ -80,7 +76,6 @@ switch ($PackageParameters.Keys) {
         $installArgs += "--UserPassword=$($PackageParameters['UserPassword'])"
         # no default value
     }
-    
 }
 
 if ($env:IsUpgrade -or $PackageParameters['IsUpgrade']) {
@@ -90,7 +85,7 @@ if ($env:IsUpgrade -or $PackageParameters['IsUpgrade']) {
 $Statements = $installArgs -Join " "
 Start-ChocolateyProcessAsAdmin -Statements $Statements -ExeToRun $fileLocation
 
-#Notify user of ProGet website once everything has been created and configured
+# Notify user of ProGet website once everything has been created and configured
 
 $WebsiteRoot = 'http://localhost:{0}' -f $WebServerPrefixes
 

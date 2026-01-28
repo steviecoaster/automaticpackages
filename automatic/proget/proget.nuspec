@@ -18,7 +18,7 @@
       ## Package Parameters
 
       - `/TargetDirectory` - The root install directory for ProGet. Defaults to `$PathCombine($SpecialWindowsPath(ProgramFiles), ProductName)`.
-      - `/ConnectionString` - Connection string used to create and initialize the database schema. Defaults to `'Data Source=Localhost\SQLEXPRESS;Trusted_Connection=true;'`
+      - `/ConnectionString` - Connection string used to create and initialize the database schema. If you want to use a local SQL Server instance, you can use `'Data Source=Localhost\SQLEXPRESS;Trusted_Connection=true;'`.
       - `/DbName` - Name of the SQL database to use or create. This overrides any Initial Catalog specified in the connection string. Defaults to `ProGet`.
       - `/WebServerPrefixes` - Specifies the URL and port used by the integrated web server. Defaults to `http://*:8624`.
       - `/ExtensionsPath` - Specifies the directory where user-installed ProGet extensions will be stored. Defaults to `$PathCombine($SpecialWindowsPath(CommonApplicationData), ProductName, Extensions)`.
@@ -35,8 +35,7 @@
     <bugTrackerUrl>https://forums.inedo.com/</bugTrackerUrl>
     <tags>proget inedohub</tags>
     <dependencies>
-      <dependency id="inedohub" version="1.4.4" />      
-      <dependency id="sql-server-express" version="2022.16.0.1000" />
+      <dependency id="inedohub" version="1.4.4" />
     </dependencies>
   </metadata>
   <files>
