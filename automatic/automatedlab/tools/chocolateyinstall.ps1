@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$url64 = 'https://github.com/AutomatedLab/AutomatedLab/releases/download/5.59.0/AutomatedLab.msi'
+$url64 = 'https://github.com/AutomatedLab/AutomatedLab/releases/download/5.60.0/AutomatedLab.msi'
 $fileName = SPlit-Path -leaf $url64
 $file = Join-Path $toolsDir -ChildPath $fileName
  
@@ -9,7 +9,7 @@ $downloadArgs = @{
     packageName = $env:ChocolateyPackageName
     FileFullPath = $file
     url64bit = $url64
-    checksum64 = '82c6e4d8d37d7e2b19927a18660060bf6c58e1ca7c27ba03c12bc55af1d29390'
+    checksum64 = 'c2250a6406a31d5a9581e882d9be9c4663a60bff75d752d2e24beb1e1035a9a8'
     checksumType64 = 'SHA256'
 }
 
