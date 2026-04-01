@@ -1,7 +1,7 @@
 ﻿
 $ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://imsreleases.blob.core.windows.net/universal/production/2026.1.3/PowerShellUniversal.2026.1.3.msi'
+$url        = 'https://imsreleases.blob.core.windows.net/universal/production/2026.1.5/PowerShellUniversal.2026.1.5.msi'
 
 $pp = Get-PackageParameters
 
@@ -11,7 +11,7 @@ $packageArgs = @{
   fileType      = 'MSI'
   url           = $url
   softwareName  = 'PowerShellUniversal*'
-  checksum      = 'E555093C06E64EA096D1162EEA08BF5FAD020D1617668DD4C8433C589D3373E9'
+  checksum      = '8B7D70F1F75E8BD1F64066FFBE39DC458066583DB3F85D713BD27B7C96663046'
   checksumType  = 'sha256'
   silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`" SUPPRESSBROWSER=true"
   validExitCodes= @(0, 3010, 1641)
