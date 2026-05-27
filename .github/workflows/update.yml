@@ -23,7 +23,7 @@ jobs:
           pgutil,
           inedohub,
           proget,
-          nexushell
+          fondue
         ]
 
     steps:
