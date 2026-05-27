@@ -36,7 +36,6 @@
     <tags>proget inedohub</tags>
     <dependencies>
       <dependency id="inedohub" version="1.4.4" />      
-      <dependency id="sql-server-express" version="2022.16.0.1000" />
     </dependencies>
   </metadata>
   <files>
