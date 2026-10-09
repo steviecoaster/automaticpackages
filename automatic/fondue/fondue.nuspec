@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>fondue</id>
+    <version>1.0.2</version>
+    <owners>steviecoaster</owners>
+    <title>fondue (Install)</title>
+    <authors>Chocolatey Software</authors>
+    <projectUrl>https://github.com/chocolatey-solutions/Fondue</projectUrl>
+    <iconUrl>https://img.chocolatey.org/nupkg/chocolateyicon.png</iconUrl>
+    <copyright>Chocolatey Software</copyright>
+    <licenseUrl>https://github.com/chocolatey-solutions/Fondue/blob/main/LICENSE</licenseUrl>
+    <projectSourceUrl>https://github.com/chocolatey-solutions/Fondue</projectSourceUrl>
+    <docsUrl>https://chocolatey-solutions.github.io/Fondue/</docsUrl>
+    <mailingListUrl>https://ch0.co/community</mailingListUrl>
+    <bugTrackerUrl>https://github.com/chocolatey-solutions/Fondue/issues</bugTrackerUrl>
+    <tags>fondue maintainer package development author</tags>
+    <summary>A PowerShell module that melts away the complexity of creating and managing Chocolatey packages.</summary>
+    <description>Fondue provides a rich set of cmdlets that streamline every step of the Chocolatey package lifecycle — from scaffolding new packages and metapackages, to managing dependencies, updating metadata, syncing installed software, and validating your work before publishing.</description>
+    <dependencies>
+    </dependencies>
+
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
