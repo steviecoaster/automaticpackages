@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>onthespot</id>
+    <version>1.0.7</version>
+    <owners>steviecoaster</owners>
+    <title>onthespot (Install)</title>
+    <authors>justin025</authors>
+    <tags>audio music musicplayer mp3</tags>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/onthespot</packageSourceUrl>
+    <projectUrl>https://github.com/justin025/onthespot</projectUrl>
+    <licenseUrl>https://github.com/justin025/onthespot/blob/master/LICENSE</licenseUrl>
+    <docsUrl>https://github.com/justin025/onthespot/tree/master/docs</docsUrl>
+    <bugTrackerUrl>https://github.com/justin025/onthespot/issues</bugTrackerUrl>
+    <releaseNotes>https://github.com/justin025/onthespot/releases</releaseNotes>
+    <summary>OnTheSpot is an easy-to-use music downloader built with Python and Qt. Search for songs, albums, or playlists and download them directly to your device</summary>
+    <description>
+OnTheSpot is an easy-to-use music downloader built with Python and Qt. Search for songs, albums, or playlists and download them directly to your device
+## Package Parameters
+
+- `/AddDesktopShortcut` - Adds an `OnTheSpot` shortcut to the desktop
+    </description>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
