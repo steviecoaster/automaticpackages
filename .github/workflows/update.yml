@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: chocolatey-community/chocolatey-au-action@2.0
+      - uses: chocolatey-community/chocolatey-au-action@3.0
         with:
           package-paths: automatic/*
           push: true
