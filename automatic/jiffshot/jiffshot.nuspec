@@ -9,6 +9,7 @@
     <title>Devolutions Jiffshot (Install)</title>
     <authors>Devolutions Inc.</authors>
     <projectUrl>https://github.com/Devolutions/jiffshot</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Devolutions/jiffshot@master/assets/jiffshot.svg</iconUrl>
     <projectSourceUrl>https://github.com/Devolutions/jiffshot</projectSourceUrl>
     <docsUrl>https://github.com/Devolutions/jiffshot#readme</docsUrl>
     <bugTrackerUrl>https://github.com/Devolutions/jiffshot/issues</bugTrackerUrl>
