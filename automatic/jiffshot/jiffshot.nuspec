@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>jiffshot</id>
+    <version>0.8.0</version>
+    <owners>steviecoaster</owners>
+    <packageSourceUrl>https://github.com/steviecoaster/automaticpackages/tree/master/automatic/jiffshot</packageSourceUrl>
+    <title>Devolutions Jiffshot (Install)</title>
+    <authors>Devolutions Inc.</authors>
+    <projectUrl>https://github.com/Devolutions/jiffshot</projectUrl>
+    <projectSourceUrl>https://github.com/Devolutions/jiffshot</projectSourceUrl>
+    <docsUrl>https://github.com/Devolutions/jiffshot#readme</docsUrl>
+    <bugTrackerUrl>https://github.com/Devolutions/jiffshot/issues</bugTrackerUrl>
+    <licenseUrl>https://github.com/Devolutions/jiffshot/blob/master/LICENSE-MIT</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) 2026 Devolutions Inc.</copyright>
+    <tags>jiffshot screenshot screen-capture screen-recorder annotation image-editor video-editor devolutions</tags>
+    <summary>Capture, record, annotate, and edit screenshots and videos on Windows.</summary>
+    <description>Devolutions Jiffshot is a screen capture, screen recording, and non-destructive image and video editing application for Windows 10 and Windows 11.
+
+This package installs the signed x64 Windows MSI. Jiffshot can capture screenshots, record video, annotate images, and export or share the results.</description>
+    <releaseNotes>https://github.com/Devolutions/jiffshot/releases</releaseNotes>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
