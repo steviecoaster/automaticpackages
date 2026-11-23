@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$url64 = 'https://github.com/Devolutions/jiffshot/releases/download/v0.8.0/Devolutions.Jiffshot-windows-x64-0.8.0.msi'
+$url64 = 'https://github.com/Devolutions/jiffshot/releases/download/v0.9.0/Devolutions.Jiffshot-windows-x64-0.9.0.msi'
 $fileName = SPlit-Path -leaf $url64
 $file = Join-Path $toolsDir -ChildPath $fileName
  
@@ -9,7 +9,7 @@ $downloadArgs = @{
     packageName = $env:ChocolateyPackageName
     FileFullPath = $file
     url64bit = $url64
-    checksum64 = '50dd74db820010b3a31cf9a83f1f3dbea145db4e1781c6f206c420a1accddf3d'
+    checksum64 = 'db805e349f4435cc25b29603ebc21d47b3356685e089b94e910a762b51c1b76e'
     checksumType64 = 'SHA256'
 }
 
